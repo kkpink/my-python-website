@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}Python's Building Blocks{% endblock %}
+{% block content %}
+<div class="content">
+    <h2>Looping and Flow Control in Python</h2>
+
+    <h3>The pass Instruction</h3>
+    <p>pass is a placeholder. It does nothing, but it helps you write code that’s syntactically correct when a block is required.</p>
+    <pre><code>
+if True:
+    pass  # Will not raise an error, even though nothing happens
+    </code></pre>
+
+    <h3>Loops: while, for, range()</h3>
+
+    <h4>while Loop</h4>
+    <p>Repeats as long as the condition is True.</p>
+    <pre><code>
+count = 0
+while count < 3:
+    print(count)
+    count += 1
+    </code></pre>
+
+    <h4>for Loop with range()</h4>
+    <p>Executes a block of code a fixed number of times.</p>
+    <pre><code>
+for i in range(3):
+    print(i)
+    </code></pre>
+
+    <h3>Iterating Through Sequences</h3>
+    <p>You can loop over strings, lists, or other sequences using for ... in.</p>
+    <pre><code>
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
+    </code></pre>
+
+    <h3>Loop + else: while-else and for-else</h3>
+    <p>The else block runs if the loop wasn’t stopped by a break.</p>
+
+    <h4>while-else Example</h4>
+    <pre><code>
+i = 0
+while i < 3:
+    print(i)
+    i += 1
+else:
+    print("Done!")
+    </code></pre>
+
+    <h4>for-else Example</h4>
+    <pre><code>
+for n in range(3):
+    print(n)
+else:
+    print("Loop finished.")
+    </code></pre>
+
+    <h3>Nesting Loops and Conditionals</h3>
+    <p>Loops and if statements can be placed inside each other.</p>
+    <pre><code>
+for i in range(1, 4):
+    if i % 2 == 0:
+        print(f"{i} is even")
+    else:
+        print(f"{i} is odd")
+    </code></pre>
+
+    <h3>Controlling Loops with break and continue</h3>
+
+    <h4>break – exit the loop early</h4>
+    <pre><code>
+for i in range(5):
+    if i == 3:
+        break
+    print(i)  # Output: 0, 1, 2
+    </code></pre>
+
+    <h4>continue – skip to next iteration</h4>
+    <pre><code>
+for i in range(5):
+    if i == 3:
+        continue
+    print(i)  # Output: 0, 1, 2, 4
+    </code></pre>
+
+    <h3>Tips</h3>
+    <ul>
+        <li>Use range(start, stop) to loop over numbers</li>
+        <li>for is best when you know how many times to loop</li>
+        <li>while is best when the end condition depends on user input or logic</li>
+        <li>Use break to exit early, continue to skip a step</li>
+        <li>else on loops is rare, but useful when checking if something was found</li>
+    </ul>
+</div>
+{% endblock %}

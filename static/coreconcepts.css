@@ -1,0 +1,37 @@
+.main {
+    padding: 2rem;
+}
+
+.content ul li {
+    margin-bottom: 0.5rem;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pytho {
+  width: 300px;  /* or max-width: 70%; */
+  height: auto;
+}
+.image-wrapper {
+  position: relative;
+
+}
+
+.pytho {
+  position: absolute;
+  top: -80px;
+  left: 525px;
+  width: 150px;
+  height: auto;
+}
+
+.mytext {
+    font-style: italic;
+
+}
+

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Python's Building Blocks{% endblock %}
+{% block content %}
+<div class="content">
+    <h2>Defining and Using Functions in Python</h2>
+
+    <h3>User-Defined Functions</h3>
+    <p>You can create your own functions using the def keyword. Functions let you reuse code and organize logic clearly.</p>
+    <pre><code>
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Alice")  # Calling (invoking) the function
+    </code></pre>
+
+    <h3>The return Keyword</h3>
+    <p>return sends a result back from the function to the caller. The function ends as soon as return runs.</p>
+    <pre><code>
+def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print(result)  # Output: 8
+    </code></pre>
+
+    <h3>The None Keyword</h3>
+    <p>If a function does not use return, it returns None by default — which means “nothing.”</p>
+    <pre><code>
+def say_hi():
+    print("Hi!")
+
+output = say_hi()
+print(output)  # Output: None
+    </code></pre>
+
+    <h3>Generators</h3>
+    <p>Generators are a special type of function that uses yield instead of return. They return values one at a time, saving memory.</p>
+    <pre><code>
+def count_up_to(n):
+    count = 1
+    while count <= n:
+        yield count
+        count += 1
+
+for num in count_up_to(3):
+    print(num)
+# Output: 1 2 3
+    </code></pre>
+
+    <h3>Recursion</h3>
+    <p>A recursive function calls itself to solve a smaller part of the problem. It must have a base case to avoid infinite loops.</p>
+    <pre><code>
+def factorial(n):
+    if n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))  # Output: 120
+    </code></pre>
+
+    <h3>Key Tips</h3>
+    <ul>
+        <li>Use functions to organize and reuse code.</li>
+        <li>return ends a function and sends back a value.</li>
+        <li>None means “no value” or “nothing returned.”</li>
+        <li>Generators are great for large loops or streams of data.</li>
+        <li>Recursion is powerful but must be written carefully to avoid infinite loops.</li>
+    </ul>
+</div>
+{% endblock %}

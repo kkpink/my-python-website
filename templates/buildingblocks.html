@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Python's Building Blocks{% endblock %}
+{% block content %}
+<div class="content">
+    <h1>Core Concepts: Data Types, Variables & Naming</h1>
+    <h2>Here we will disscus vital topics which ease your Python journey with Profesor Pytho!</h2>
+
+    <h3> Data Types</h3>
+    <ul>
+        <li><strong>Boolean:</strong> Represents truth values, either True or False</li>
+        <li><strong>Integers:</strong> Whole numbers like 11, 1 or 3.</li>
+        <li><strong>Floating-point Numbers:</strong> Numbers with decimals, like 3.14 or 5.36.</li>
+        <li><strong>Scientific Notation:</strong> Is used to represent very large or small numbers, like 1.5e6 which is (1.5 × 10⁶).</li>
+        <li><strong>Strings:</strong> Sequences of text or charcters inside quotes, like "Hello World".</li>
+    </ul>
+
+    <h3>Numeral Systems and Bases</h3>
+    <ul>
+        <li><strong>Binary (Base 2):</strong> Uses only 0 and 1, like 01010 which represents 10.Binary numbers in python have a prefix of Ob</li>
+        <li><strong>Octal (Base 8):</strong> Uses digits 0–7, like 0o17.Octal numbers in Python have a prefix of Oo</li>
+        <li><strong>Decimal (Base 10):</strong> Our usual number system which digits 0-9 like 99 or 58.</li>
+        <li><strong>Hexadecimal (Base 16):</strong> Uses digits 0–9 and letters A–F, like 0x1F</li>
+    </ul>
+
+    <h3>Variables</h3>
+    <ul>
+        <li>Used to store values (like boxes with labels) as it acts like a container.</li>
+        <li>Example: name = "Alice"or core = 100.</li>
+    </ul>
+
+    <h3>Naming Conventions</h3>
+    <ul>
+        <li>Use lowercase letters and underscores: <code>user_name</code>, <code>total_score</code>.</li>
+        <li>Variable names should be descriptive: avoid <code>x</code>, <code>y</code> unless in math.</li>
+        <li>Names can’t start with numbers or use special symbols (except underscores).</li>
+    </ul>
+
+    <h3>PEP-8 Tips for Beginners</h3>
+    <ul>
+        <li>PEP-8 is the style guide for Python code.</li>
+        <li>Use 4 spaces for indentation (don’t mix tabs and spaces).</li>
+        <li>Keep lines under 79 characters for readability.</li>
+        <li>Leave a blank line between functions and classes.</li>
+        <li>Use meaningful names and consistent formatting.</li>
+    </ul>
+</div>
+
+
+{% endblock %}

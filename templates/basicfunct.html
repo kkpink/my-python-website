@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Python's Building Blocks{% endblock %}
+{% block content %}
+<div class="content">
+    <h2>Python Lambda Functions</h2>
+
+    <h3> What Is a Lambda?</h3>
+    <p>A <strong>lambda</strong> is an anonymous function — a quick, one-line function without a name.</p>
+
+    <h3> Defining a Lambda</h3>
+    <pre><code>lambda arguments: expression</code></pre>
+
+    <h3>Example</h3>
+    <pre>square = lambda x: x ** 2
+print(square(4))  # Output: 16</pre>
+
+    <h3> Using Lambdas in Self-Defined Functions</h3>
+    <p>You can pass a lambda function into your own function.</p>
+
+    <pre>def apply_operation(x, func):
+    return func(x)
+
+result = apply_operation(10, lambda n: n + 5)
+print(result)  # Output: 15</pre>
+
+    <h3> The map() Function</h3>
+    <p>map() applies a function to each element in an iterable.</p>
+    <pre>nums = [1, 2, 3, 4]
+squared = list(map(lambda x: x ** 2, nums))
+print(squared)  # Output: [1, 4, 9, 16]</pre>
+
+    <h3>🧹 The filter() Function</h3>
+    <p>filter() selects elements that return True when passed to the function.</p>
+    <pre>nums = [1, 2, 3, 4, 5]
+evens = list(filter(lambda x: x % 2 == 0, nums))
+print(evens)  # Output: [2, 4]</pre>
+
+    <h3>=When to Use Lambdas</h3>
+    <ul>
+        <li>For quick, throwaway functions</li>
+        <li>Inside map(), filter() sorted(), etc.</li>
+        <li>When function naming is unnecessary</li>
+    </ul>
+</div>
+
+{% endblock %}

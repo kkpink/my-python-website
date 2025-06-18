@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}Python's Building Blocks{% endblock %}
+{% block content %}
+<div class="content">
+    <h2>Python Exception Handling</h2>
+
+    <p><strong>Exceptions</strong> are errors that occur while your program is running. If not handled, they can crash your program. Python gives you tools to catch and deal with these errors using try and except.</p>
+
+    <h3>Basic Structure</h3>
+    <pre><code>
+try:
+    # Code that might cause an error
+    risky_operation()
+except SomeError:
+    # Code to run if an error happens
+    handle_the_error()
+    </code></pre>
+
+    <h3>Full Try-Except-Else-Finally</h3>
+    <p>You can add else to run code if no errors happen, and finally to run code no matter what.</p>
+    <pre><code>
+try:
+    number = int(input("Enter a number: "))
+    result = 100 / number
+except ValueError:
+    print("That was not a number.")
+except ZeroDivisionError:
+    print("You can't divide by zero!")
+else:
+    print(f"Result is {result}")
+finally:
+    print("This runs no matter what.")
+    </code></pre>
+
+    <h3>Why Use Exception Handling?</h3>
+    <ul>
+        <li>Prevents your program from crashing</li>
+        <li>Lets you show helpful messages to users</li>
+        <li>Makes your code more reliable and professional</li>
+    </ul>
+
+    <h3>Common Exceptions</h3>
+    <ul>
+        <li>ValueError – when the value is the wrong type</li>
+        <li>ZeroDivisionError – dividing by zero</li>
+        <li>TypeError – wrong type used in operation</li>
+        <li>IndexError – list index out of range</li>
+        <li>KeyError – dictionary key doesn't exist</li>
+        <li>FileNotFoundError – file can't be found</li>
+    </ul>
+
+    <h3>Tips</h3>
+    <ul>
+        <li>Always catch specific errors, not just except:</li>
+        <li>Use finally to close files or clean up</li>
+        <li>Don’t hide errors — handle them clearly</li>
+    </ul>
+</div>
+
+<div class="content">
+    <h2>Python Exception Hierarchy</h2>
+    <p>All exceptions in Python are part of a class hierarchy. Understanding this helps you write better try-except blocks and catch the right kind of errors.</p>
+
+    <h3>Top-Level Structure</h3>
+    <ul>
+        <li><strong>BaseException</strong>
+            <ul>
+                <li><strong>SystemExit</strong> – raised when the interpreter is exiting</li>
+                <li><strong>KeyboardInterrupt</strong> – when user hits Ctrl+C</li>
+                <li><strong>GeneratorExit</strong></li>
+                <li><strong>Exception</strong>
+                    <ul>
+                        <li><strong>ArithmeticError</strong>
+                            <ul>
+                                <li>ZeroDivisionError</li>
+                                <li>OverflowError</li>
+                                <li>FloatingPointError</li>
+                            </ul>
+                        </li>
+                        <li>ValueError</li>
+                        <li>TypeError</li>
+                        <li>IndexError</li>
+                        <li>KeyError</li>
+                        <li>ImportError</li>
+                        <li>FileNotFoundError</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Why It Matters</h3>
+    <ul>
+        <li>Catching Exception handles most user-level errors.</li>
+        <li>Catching BaseException is dangerous — it may stop system-level signals too.</li>
+        <li>You can catch a group of errors using a parent class (e.g., catch ArithmeticError instead of just ZeroDivisionError).</li>
+    </ul>
+
+    <h3>Example</h3>
+    <pre><code>
+try:
+    result = 10 / 0
+except ArithmeticError:
+    print("Something went wrong with math!")
+except Exception:
+    print("A general error occurred.")
+    </code></pre>
+</div>
+{% endblock %}
+
+

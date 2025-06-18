@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Zero to Hero{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            Content
+            <ul>
+              <li><a href="{{ url_for('home') }}">Home</a></li>
+              <li><a href="{{ url_for('beginners') }}">Core Concepts </a></li>
+              <li><a href="{{ url_for('buildingblocks') }}">Python's Building Blocks </a></li>
+                <li><a href="{{ url_for('operators') }}">Operators: The Code Commanders </a></li>
+                <li><a href="{{ url_for('basicfunc') }}">Input In, Output Out</a></li>
+                <li><a href="{{ url_for('ifconditions') }}">Route Selector</a></li>
+                <li><a href="{{ url_for('iteration') }}">The Iteration Station</a></li>
+                <li><a href="{{ url_for('datatypes') }}">Understanding Building Blocks </a></li>
+                <li><a href="{{ url_for('decomfunc') }}">Divide and Conquer: The Power of Functions</a></li>
+                <li><a href="{{ url_for('functions') }}">Context Matters: The Function's World”</a></li>
+
+                <li><a href="{{ url_for('handling') }}">Code Safetey 101</a></li>
+                <li><a href="{{ url_for('oop') }}">Building with Blueprints</a></li>
+                <li><a href="{{ url_for('modules') }}">Reuse-Recycle-Reduce</a></li>
+
+                <li><a href="{{ url_for('basicfunct') }}">Basic Functions</a></li>
+                <li><a href="{{ url_for('textfiles') }}">I/O Operations And File Handling</a></li>
+                <li><a href="{{ url_for('quiz') }}">Quiz</a></li>
+
+
+
+
+            </ul>
+        </div>
+
+        <div class="main">
+            {% block content %}
+            <!-- individual page content goes here -->
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>
+

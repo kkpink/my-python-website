@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Python's Building Blocks{% endblock %}
+{% block content %}
+<div class="content">
+    <h2> Python Operators</h2>
+    <p>Operators are special symbols or keywords that perform operations on variables and values to produce an outcome.</p>
+
+    <h3>Arithmetic Operators</h3>
+    <pre>+   -Addition:Adds two values together       5 + 2 = 7
+-   - Subtraction: Takes away one value from another   5 - 2 = 3
+*   - Multiplication: Multiplies two values  5 * 2 = 10
+/   - Division: Divides one value by another       5 / 2 = 2.5
+//  - Floor Division:Divides one value by another and rounds the answer down  5 // 2 = 2
+%   - Modulus: divides a value by another and outputs the remainder 5 % 2 = 1
+**  - Exponentiation: puts one value as the power of another 5 ** 2 = 25</pre>
+
+    <h3>Comparison Operators</h3>
+    <p>Compare two values and returns a boolean value:True or False </p>
+    <pre>==  Equal to: You need to use double == as a single = refers to assignment of values  5 == 5 → True
+!=  - Not equal to:    5 != 3 → True
+>   - Greater than:    5 > 2  → True
+<   - Less than:       5 < 10 → True
+>=  - Greater or equal 5 >= 5 → True
+<=  - Less or equal    5 <= 4 → False-</pre>
+
+    <h3>Logical Operators</h3>
+    <p>Used to combine multiple conditions.</p>
+    <pre>and  Outputs True if both conditions are True
+or  Outputs True if at least one condition is True
+not  Reverses the  value, if the value True it outputs False and vice-versa
+
+# Example:
+x = 10
+print(x > 5 and x < 20)   # True
+print(not x == 10)        # False</pre>
+
+    <h3>Assignment Operators</h3>
+    <p>Assign and update the value of a variable.</p>
+    <pre> =   # x = 5
++=  # x += 2  → x = x + 2
+-=  # x -= 1  → x = x - 1
+*=  # x *= 3  → x = x * 3
+/=  # x /= 2  → x = x / 2
+//= # x //= 2
+%=  # x %= 3
+**= # x **= 2</pre>
+
+    <h3>Bonus: Identity & Membership Operators</h3>
+    <p>Used to check object identity or list membership.</p>
+    <pre># Identity Operators
+is      Used to get True if same object
+is not  Used to get True if not the same object
+
+# Membership Operators
+in       # True if value is in sequence
+not in   # True if value is not in sequence
+
+# Examples:
+x = [1, 2, 3]
+print(2 in x)         # True
+print(x is [1, 2, 3]) # False (different objects)</pre>
+
+    <h3> Tips</h3>
+    <ul>
+        <li>Use parentheses to group complex logic: if (a > 0 and b < 5)</li>
+        <li>Always test boolean logic carefully</li>
+        <li>is  checks identity, not equality — don’t confuse with ==</li>
+    </ul>
+</div>
+
+
+{% endblock %}

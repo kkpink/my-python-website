@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="content">
+  <h2>Python Quiz</h2>
+
+  <form method="POST">
+    {% for i, q in enumerate(questions) %}
+      <p><strong>{{ i + 1 }}. {{ q.question }}</strong></p>
+      {% for option in q.options %}
+        <label>
+          <input type="radio" name="q{{ i }}" value="{{ option }}" required> {{ option }}
+        </label><br>
+      {% endfor %}
+      <br>
+    {% endfor %}
+    <button type="submit">Submit Quiz</button>
+  </form>
+
+  {% if feedback %}
+    <p><strong>{{ feedback }}</strong></p>
+  {% endif %}
+</div>
+{% endblock %}

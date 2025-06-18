@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block title %}Zero to Python: Core Concepts{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='coreconcepts.css') }}">
+<div class="title">Zero To Hero: Core Concepts</div>
+<div class="subtitle">An introduction to fundamental ideas before you start- by none other than Professor Pytho!</div>
+<div class="content">
+    <p>Here in this page the topics of:</p>
+    <ul>
+        <li>Interpreting and the interpreter, compilation and the compiler</li>
+        <li>Lexis, syntax, and semantics</li>
+        <li>Keywords</li>
+        <li>Instructions</li>
+        <li>Indentation</li>
+        <li>Comments</li>
+    </ul>
+    <p>Will be introduced to you with much ease by of course -- Professor Pytho!</p>
+    <div class="image-wrapper">
+        {% if filename %}
+        <img src="{{ url_for('static', filename='uploads/' + filename) }}" class="pytho" alt="Uploaded Image">
+        {% endif %}
+
+    </div>
+
+    <h2>Interpreting and the interpreter</h2>
+    <p>Interpretation is the process of translating and executing a program line by line at runtime.
+        A program that performs this task is called an interpreter.
+        It reads and converts the source code into machine-executable instructions every time the program is run.
+        Because of this, interpreted programs cannot be shared as standalone executables —
+        the recipient must also have the interpreter installed in order to run the code.</p>
+
+</div>
+<div class="content">
+
+
+    <p class="mytext">"Interpretation is like having a live translator who readsss your code and explainsss it to the computer one line at a
+        time,sss every time you run the program.
+
+        The program that does this issss called an interpreter. It doesn't create a ssseparate, permanent version of your
+        code in a language the computer understandssss — it just translates and runsss it on the spot.
+        This means if you want to share your code with someone else, they’ll also need the ssssame interpreter
+        on their computer — because the code needs to be "translated" every time it runs."-Professor Pytho</p>
+
+
+    <h2>Compilation and the Compiler</h2>
+    <p>Compilation is the process of translating the entire source code into machine code once, before the program is
+        run. This translation is done by a program called a compiler.
+
+        The compiler takes your code and creates a new file — often an executable like .exe on Windows — that can be run
+        without needing the original source code or the compiler itself. This makes it easy to share and distribute the
+        compiled file, since it’s already in a format the computer can understand.
+
+        However, if you make changes to your code, you must recompile it again to update the executable.</p>
+    <p class="mytext">"Compilation is like hiring a translator to transsslate your whole book into
+        another language once. After that, anyone can read the transsslated book — they don’t need the
+        translator anymore. But if you change a chapter, you'll need the transsslator to redo the transsslation."-Professor Pytho</p>
+    <h2>Lexis, syntax, and semantics</h2>
+    <p>Lexis
+        Lexis refers to the vocabulary of a programming language — the valid words and symbols that the language
+        understands.
+        In Python, for example, words like if, for, print, and def are part of its lexis. These are called keywords.
+
+        Syntax
+        Syntax is about the rules that define how you combine words and symbols to form valid statements or expressions.
+        If you mess up the syntax, the program won’t run.
+        Example: print("Hello") is valid syntax, but print "Hello" (in Python 3) is not.
+
+        Semantics
+        Semantics is about the meaning of your code — what the program actually does.
+        Even if the syntax is correct, your code might do the wrong thing if the semantics are off.
+        Example: total = price - discount is syntactically fine, but it's semantically wrong if you meant to add the
+        discount.
+
+    </p>
+
+    <p>Lexis = The valid words (e.g., "run", "cat", "the")
+
+        Syntax = The grammar rules (e.g., "The cat runs.")
+
+        Semantics = The meaning (e.g., does it make logical sense?)</p>
+    <h2>Keywords</h2>
+    <p>Keywords are special, reserved words that Python uses for specific purposes. You can't use them as variable names
+        because they have built-in meaning.
+
+        Examples:
+
+        if (used for conditions)
+
+        def (used to define a function)
+
+        while, for, class, return, etc.
+
+        Think of them as Python’s own vocabulary — like grammar words in a language.</p>
+    <h2>Instructions</h2>
+    <p>Instructions (or statements) are lines of code that tell the computer what to do — like commands.
+
+        Examples:
+
+        print("Hello") → tells Python to display “Hello”
+
+        x = 5 → tells Python to store the value 5 in a variable named x
+
+        Every line that performs an action is an instruction.</p>
+    <h2>Indentation</h2>
+    <p>Indentation is the spacing at the beginning of a line of code. In Python, indentation isn't just about style — it
+        defines code blocks.
+
+        For example:
+
+        python
+        Copy
+        Edit
+        if x > 5:
+        print("x is greater than 5")</p>
+    <h2>Comments</h2>
+    <p>Comments are lines in your code that Python ignores. They’re used to explain what your code does — helpful for
+        you or other developers reading it later.
+
+        In Python, comments start with #:
+
+        python
+        Copy
+        Edit
+        # This is a comment
+        print("Hello")</p>
+
+
+    {% endblock %}

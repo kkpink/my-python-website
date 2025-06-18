@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block title %}Python's Building Blocks{% endblock %}
+{% block content %}
+<div class="content">
+    <h2>Closures in Python</h2>
+
+    <h3>What Is a Closure?</h3>
+    <p>A <strong>closure</strong> is a function that “remembers” the values from its enclosing scope even after the outer function has finished executing.</p>
+
+    <h3>Why Use Closures?</h3>
+    <ul>
+        <li>Encapsulate behavior and data</li>
+        <li>Useful for decorators and callbacks</li>
+        <li>Alternative to classes when managing state</li>
+    </ul>
+
+    <h3>Defining & Using Closures</h3>
+    <pre>
+def outer(x):
+    def inner(y):
+        return x + y
+    return inner
+
+add5 = outer(5)
+print(add5(3))  # Output: 8
+    </pre>
+
+    <p>x is remembered inside inner() even after outer() is done.</p>
+
+    <hr>
+
+    <h2>Input/Output Terminology</h2>
+
+    <h3>I/O Modes</h3>
+    <ul>
+        <li>'r' – Read (default)</li>
+        <li>'w' – Write (overwrites file)</li>
+        <li>'a' – Append (adds to end)</li>
+        <li>'b' – Binary mode</li>
+        <li>'+' – Read & write</li>
+    </ul>
+
+    <h3>Predefined Streams</h3>
+    <ul>
+        <li>sys.stdin – standard input</li>
+        <li>sys.stdout – standard output</li>
+        <li>sys.stderr – standard error</li>
+    </ul>
+
+    <h3>Streams vs. Handles</h3>
+    <ul>
+        <li><strong>Handle:</strong> A reference to an open file</li>
+        <li><strong>Stream:</strong> Flow of data (bytes or text)</li>
+    </ul>
+
+    <h3>Text vs. Binary Modes</h3>
+    <ul>
+        <li><strong>Text:</strong> Human-readable (e.g., 'r', 'w')</li>
+        <li><strong>Binary:</strong> Raw bytes (e.g., 'rb', 'wb')</li>
+    </ul>
+
+    <hr>
+
+    <h2>Performing I/O in Python</h2>
+
+    <h3>Opening Files with open()</h3>
+    <pre>
+file = open("example.txt", "r")
+    </pre>
+
+    <h3>I/O Functions</h3>
+    <ul>
+        <li>file.read() – Reads entire file</li>
+        <li>file.readline() – Reads one line</li>
+        <li>file.readlines() – Reads all lines into a list</li>
+        <li>file.write("text") – Writes text</li>
+        <li>file.close() – Closes file</li>
+    </ul>
+
+    <h3>With Statement (Best Practice)</h3>
+    <pre>
+with open("example.txt", "r") as f:
+    content = f.read()
+    </pre>
+
+    <h3>The errno Variable</h3>
+    <p>Use the errno module to check for system-related I/O errors.</p>
+    <pre>
+import errno
+
+try:
+    f = open("missing.txt")
+except OSError as e:
+    if e.errno == errno.ENOENT:
+        print("File not found!")
+    </pre>
+
+    <h3>Using bytearray as a Buffer</h3>
+    <pre>
+data = bytearray(5)
+with open("file.bin", "rb") as f:
+    f.readinto(data)
+print(data)
+    </pre>
+
+    <p>bytearray is useful for binary I/O where buffer efficiency matters.</p>
+</div>
+{% endblock %}

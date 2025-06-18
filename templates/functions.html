@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}Python's Building Blocks{% endblock %}
+{% block content %}
+<div class="content">
+    <h2>Python Functions: Parameters, Arguments & Scope</h2>
+
+    <h3>Parameters vs. Arguments</h3>
+    <ul>
+        <li><strong>Parameters</strong> are the variable names used in a function definition.</li>
+        <li><strong>Arguments</strong> are the actual values passed to a function when it is called.</li>
+    </ul>
+    <pre><code>
+def greet(name):  # name is a parameter
+    print(f"Hello, {name}!")
+
+greet("Alice")  # "Alice" is the argument
+    </code></pre>
+
+    <h3>Positional Arguments</h3>
+    <p>Values are passed in order and matched to parameters by position.</p>
+    <pre><code>
+def full_name(first, last):
+    print(f"{first} {last}")
+
+full_name("Jane", "Doe")
+    </code></pre>
+
+    <h3>Keyword Arguments</h3>
+    <p>You specify which parameter each value goes to by name.</p>
+    <pre><code>
+full_name(last="Doe", first="Jane")
+    </code></pre>
+
+    <h3>Mixed Arguments</h3>
+    <p>You can combine both — positional first, then keyword.</p>
+    <pre><code>
+full_name("Jane", last="Doe")
+    </code></pre>
+
+    <h3>Default Parameter Values</h3>
+    <p>You can give parameters default values in the function definition.</p>
+    <pre><code>
+def greet(name="stranger"):
+    print(f"Hello, {name}!")
+
+greet()         # Hello, stranger!
+greet("Alice")  # Hello, Alice!
+    </code></pre>
+
+    <h3>Name Scopes & Variable Shadowing</h3>
+    <p>Variables exist in different <strong>scopes</strong>: local (inside functions) and global (outside functions).</p>
+    <p>When a local variable has the same name as a global one, it <strong>shadows</strong> the global version.</p>
+    <pre><code>
+x = 10  # global
+
+def show():
+    x = 5  # local, shadows global
+    print(x)
+
+show()     # Output: 5
+print(x)   # Output: 10
+    </code></pre>
+
+    <h3>The global Keyword</h3>
+    <p>To modify a global variable inside a function, use <code>global</code>.</p>
+    <pre><code>
+count = 0
+
+def increase():
+    global count
+    count += 1
+
+increase()
+print(count)  # Output: 1
+    </code></pre>
+
+    <h3>Tips</h3>
+    <ul>
+        <li>Use keyword arguments for clarity.</li>
+        <li>Default parameters go last in the function definition.</li>
+        <li>Avoid using global unless necessary — it's better to return values.</li>
+    </ul>
+</div>
+{% endblock %}
+
+

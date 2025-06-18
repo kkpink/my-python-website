@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Python's Building Blocks{% endblock %}
+{% block content %}
+<div class="content">
+    <h2>Making Decisions in Python: if Statements</h2>
+    <p>Python lets your code make decisions using conditional statements. These allow your program to react differently based on conditions or inputs.</p>
+
+    <h3>Basic if Statement</h3>
+    <p>Executes code only if the condition is True.</p>
+    <pre><code>
+age = 20
+if age >= 18:
+    print("You are an adult.")
+    </code></pre>
+
+    <h3>if-else Statement</h3>
+    <p>Provides an alternative when the condition is False.</p>
+    <pre><code>
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+    </code></pre>
+
+    <h3>if-elif Statement</h3>
+    <p>Checks multiple conditions one by one. Only the first True block runs.</p>
+    <pre><code>
+grade = 85
+
+if grade >= 90:
+    print("A")
+elif grade >= 80:
+    print("B")
+elif grade >= 70:
+    print("C")
+else:
+    print("F")
+    </code></pre>
+
+    <h3>Multiple Conditional Statements</h3>
+    <p>You can write multiple independent if statements — each will be checked and possibly executed.</p>
+    <pre><code>
+num = 6
+
+if num > 0:
+    print("Positive")
+if num % 2 == 0:
+    print("Even")
+    </code></pre>
+
+    <h3>Nesting Conditional Statements</h3>
+    <p>Conditionals can be placed inside one another to check multiple levels.</p>
+    <pre><code>
+score = 90
+
+if score >= 60:
+    print("You passed.")
+    if score >= 90:
+        print("Excellent!")
+else:
+    print("You failed.")
+    </code></pre>
+
+    <h3>Best Practices</h3>
+    <ul>
+        <li>Use clear, readable conditions</li>
+        <li>Use elif for exclusive choices</li>
+        <li>Don’t over-nest; use and/or when possible</li>
+        <li>Indent consistently (PEP 8 recommends 4 spaces)</li>
+    </ul>
+</div>
+{% endblock %}

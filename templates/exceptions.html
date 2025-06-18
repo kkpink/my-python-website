@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Python's Building Blocks{% endblock %}
+{% block content %}
+<div class="content">
+    <h2>Python Exceptions</h2>
+
+    <p>
+        An <strong>exception</strong> is an error that occurs during the execution of a program. If not handled, it will stop the program. Python provides tools to catch and respond to these errors using try and except blocks.
+    </p>
+
+    <h3>Basic Try-Except Example</h3>
+    <pre><code>
+try:
+    number = int(input("Enter a number: "))
+    print(100 / number)
+except ZeroDivisionError:
+    print("You can't divide by zero!")
+except ValueError:
+    print("That's not a valid number!")
+    </code></pre>
+
+    <h3>Full Try-Except-Else-Finally Structure</h3>
+    <p>You can also use else to run code if no error occurs, and finally to run code no matter what (often used for cleanup).</p>
+    <pre><code>
+try:
+    num = int(input("Enter a number: "))
+except ValueError:
+    print("Invalid input!")
+else:
+    print(f"You entered {num}")
+finally:
+    print("Execution complete.")
+    </code></pre>
+
+    <h3>Common Built-in Exceptions</h3>
+    <ul>
+        <li>ZeroDivisionError – dividing by zero</li>
+        <li>ValueError – wrong value type (e.g. letters instead of numbers)</li>
+        <li>TypeError – wrong type of data used in operation</li>
+        <li>IndexError – accessing a list index that doesn't exist</li>
+        <li>KeyError – accessing a non-existent dictionary key</li>
+        <li>FileNotFoundError – trying to open a file that doesn’t exist</li>
+    </ul>
+
+    <h3>Why Use Exception Handling?</h3>
+    <ul>
+        <li>Prevents your program from crashing unexpectedly</li>
+        <li>Makes your code more reliable and user-friendly</li>
+        <li>Lets you respond to errors with helpful messages</li>
+    </ul>
+</div>
+{% endblock %}

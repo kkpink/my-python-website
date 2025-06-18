@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Zero to Hero{% endblock %}
+
+{% block content %}
+    <div class="title">🚀 Zero To Hero</div>
+    <div class="subtitle">A beginner’s guide to Python!</div>
+
+
+    {% if filename %}
+        <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image">
+    {% endif %}
+
+    <p class="speech">
+        ‘SSsss Hello fellow travellersss, I see you passssed my land sss,<br>
+        welcome and thank me ssss as I take you from zero to hero in Python!<br>
+        Prepare ssss as I turn you into the next Hercules — wayyy better than that goat boy trainer ssSS’
+    </p>
+
+    <p class="description">
+        Here in <span class="highlight">Zero To Hero</span>, Professor Pytho is here to assist you in anything you struggle in by breaking topics down and using his fearsome, brutal stories.<br>
+        Jokes aside, he is here to assist you as you slither forward in your journey.<br>
+        Hahaha do you get it? <span class="highlight">Slither</span>? Just make sure not to ask him about his great defeat with Apollo!
+    </p>
+{% endblock %}
+
